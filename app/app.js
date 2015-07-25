@@ -1,11 +1,10 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('googleMapsExample', [
   'ngRoute',
   'uiGmapgoogle-maps',
-  'myApp.map',
-  'myApp.version'
+  'googleMapsExample.map'
 ])
 
   .config(function(uiGmapGoogleMapApiProvider) {

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.map', ['ngRoute'])
+angular.module('googleMapsExample.map', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/map', {

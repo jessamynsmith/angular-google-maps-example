@@ -1,8 +1,8 @@
 'use strict';
 
-describe('myApp.map module', function() {
+describe('googleMapsExample.map module', function() {
 
-  beforeEach(module('myApp.map'));
+  beforeEach(module('googleMapsExample.map'));
 
   describe('map controller', function(){
 

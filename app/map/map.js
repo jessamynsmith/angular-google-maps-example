@@ -9,10 +9,9 @@ angular.module('googleMapsExample.map', ['ngRoute'])
   });
 }])
 
-.controller('MapCtrl', function($scope, uiGmapGoogleMapApi) {
+.controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', function($scope, uiGmapGoogleMapApi) {
 
     uiGmapGoogleMapApi.then(function(maps) {
-    console.log("Map is ready");
     $scope.map = {
       center: {latitude: 43.7, longitude: -79.4},
       zoom: 10
@@ -39,4 +38,4 @@ angular.module('googleMapsExample.map', ['ngRoute'])
     }];
   });
 
-});
+}]);

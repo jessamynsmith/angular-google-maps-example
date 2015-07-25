@@ -1,4 +1,5 @@
 {
+  "devel": true,
   "globalstrict": true,
   "globals": {
     "angular": false,

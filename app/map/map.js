@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('googleMapsExample.map', ['ngRoute', 'googleMapsExample.yelp'])
+angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMapsExample.yelp'])
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/map', {
@@ -9,18 +9,19 @@ angular.module('googleMapsExample.map', ['ngRoute', 'googleMapsExample.yelp'])
     });
   }])
 
-  .controller('MapCtrl', ['$scope', 'uiGmapGoogleMapApi', 'Yelp',
-    function($scope, uiGmapGoogleMapApi, Yelp) {
+  .controller('MapCtrl', ['$scope', '$geolocation', 'uiGmapGoogleMapApi', 'Yelp',
+    function($scope, $geolocation, uiGmapGoogleMapApi, Yelp) {
 
-      $scope.markers = [];
-
-      uiGmapGoogleMapApi.then(function(maps) {
+      var initializeMap = function(position) {
         $scope.map = {
-          center: {latitude: 43.7, longitude: -79.4},
+          center: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          },
           zoom: 16
         };
 
-        Yelp.search().then(function(data) {
+        Yelp.search(position).then(function(data) {
           for (var i = 0; i < 10; i++) {
             var business = data.data.businesses[i];
             $scope.markers.push({
@@ -35,6 +36,17 @@ angular.module('googleMapsExample.map', ['ngRoute', 'googleMapsExample.yelp'])
           }
         }, function(error) {
           console.log("Unable to access yelp");
+        });
+      };
+
+      $scope.markers = [];
+
+      uiGmapGoogleMapApi.then(function(maps) {
+
+        $geolocation.getCurrentPosition({
+          timeout: 3000
+        }).then(function(position) {
+          initializeMap(position);
         });
       });
 

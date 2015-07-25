@@ -9,6 +9,9 @@ skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 It can be used to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
 
+---------------------------------------
+## Original README for the seed project
+
 The seed contains a sample AngularJS application and is preconfigured to install the Angular
 framework and a bunch of development and testing tools for instant web development gratification.
 

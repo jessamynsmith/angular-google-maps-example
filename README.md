@@ -2,6 +2,8 @@
 
 Example of using angular-google-maps to display data from an API
 
+View the running app on [Heroku](https://angular-google-maps-example.herokuapp.com/)
+
 This project is based on angular-seed (the seed for AngularJS apps), which is an application
 skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 It can be used to quickly bootstrap your angular webapp projects and dev environment for these

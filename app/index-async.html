@@ -31,7 +31,7 @@
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'app.js',
-      'view1/view1.js',
+      'map/map.js',
       'components/version/version.js',
       'components/version/version-directive.js',
       'components/version/interpolate-filter.js'
@@ -44,13 +44,19 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body ng-cloak>
+<h1 class="title">angular-google-maps example</h1>
+
   <ul class="menu">
     <li><a href="#/map">Map</a></li>
   </ul>
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <p>
+    Created by Jessamyn Smith
+    <br>
+    <a href="https://github.com/jessamynsmith/angular-google-maps-example">View the source on GitHub</a>
+  </p>
 
 </body>
 </html>

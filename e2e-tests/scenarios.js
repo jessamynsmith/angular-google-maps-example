@@ -14,13 +14,15 @@ describe('my app', function() {
   describe('map', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/map');
+      browser.get('#/map');
     });
 
 
     it('should render map when user navigates to /map', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 1/);
+      // TODO make this actually test map existence
+      //expect(element.all(by.css('[ng-view] ui-gmap-google-map')).first().getText()).
+      expect(element.all(by.css('p')).first().getText()).
+        toMatch(/Jessamyn Smith/);
     });
 
   });

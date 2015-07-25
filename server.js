@@ -17,7 +17,7 @@ app.all('*', function(req, res, next) {
 });
 
 // API Routes
-app.get('/api/v1/yelp', function(request, response) {
+app.get('/api/v1/yelp/search', function(request, response) {
   var url = require('url');
   var yelp = require("yelp").createClient({
     consumer_key: process.env.YELP_CONSUMER_KEY,
@@ -28,15 +28,14 @@ app.get('/api/v1/yelp', function(request, response) {
 
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
-  console.log(query);
 
   // See http://www.yelp.com/developers/documentation/v2/search_api
   yelp.search(query, function(error, data) {
     if (error) {
-      console.log(error);
-      response.send(error);
+      response.status(error.statusCode).send(error);
+    } else {
+      response.send(data);
     }
-    response.send(data);
   });
 });
 

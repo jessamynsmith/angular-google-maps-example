@@ -4,7 +4,8 @@ Example of using angular-google-maps to display data from an API
 
 View the running app on [Heroku](https://angular-google-maps-example.herokuapp.com/)
 
-This project is based on angular-seed (the seed for AngularJS apps), which is an application
+This project is based on [angular-seed](https://github.com/angular/angular-seed)
+(the seed for AngularJS apps), which is an application
 skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 It can be used to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
@@ -95,22 +96,6 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
 
 
 ## Directory Layout
-
-```
-app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
-  map/                --> the map view template and logic
-    map.html            --> the partial template
-    map.js              --> the controller logic
-    map.js         --> tests of the controller
-  app.js                --> main application module
-  index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
-karma.conf.js         --> config file for running unit tests with Karma
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
-```
 
 ## Testing
 

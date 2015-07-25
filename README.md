@@ -9,6 +9,16 @@ skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 It can be used to quickly bootstrap your angular webapp projects and dev environment for these
 projects.
 
+In order to enable the Yelp searching, you will need to sign up for a
+[Yelp Developer Account](https://www.yelp.com/developers) and export your 
+[API V2 credentials](https://www.yelp.com/developers/manage_api_keys)
+to your environment.
+
+    export YELP_CONSUMER_KEY=<VALUE_FROM_YELP>
+    export YELP_CONSUMER_SECRET=<VALUE_FROM_YELP>
+    export YELP_TOKEN=<VALUE_FROM_YELP>
+    export YELP_TOKEN_SECRET=<VALUE_FROM_YELP>
+
 ---------------------------------------
 ## Original README for the seed project
 

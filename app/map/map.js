@@ -67,8 +67,13 @@ angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMaps
         $geolocation.getCurrentPosition({
           timeout: 3000
         }).then(function(position) {
-          initializeMap(position);
-        });
+            initializeMap(position);
+          },
+          function(error) {
+            console.log();
+            // Default to downtown Toronto
+            initializeMap({coords: {latitude: 43.6722780, longitude: -79.3745125}});
+          });
       });
 
     }]);

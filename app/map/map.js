@@ -9,11 +9,12 @@ angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMaps
     });
   }])
 
-  .controller('MapCtrl', ['$scope', '$geolocation', 'uiGmapGoogleMapApi', 'Yelp',
-    function($scope, $geolocation, uiGmapGoogleMapApi, Yelp) {
+  .controller('MapCtrl', ['$scope', '$timeout', '$geolocation', 'uiGmapGoogleMapApi', 'Yelp',
+    function($scope, $timeout, $geolocation, uiGmapGoogleMapApi, Yelp) {
 
+      $scope.markers = [];
       $scope.infoVisible = false;
-      $scope.infoBusines = {};
+      $scope.infoBusiness = {};
 
       // Initialize and show infoWindow for business
       $scope.showInfo = function(marker, eventName, markerModel) {
@@ -27,6 +28,16 @@ angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMaps
       };
 
       var initializeMap = function(position) {
+        if (!position) {
+          // Default to downtown Toronto
+          position = {
+            coords: {
+              latitude: 43.6722780,
+              longitude: -79.3745125
+            }
+          };
+        }
+
         $scope.map = {
           center: {
             latitude: position.coords.latitude,
@@ -61,19 +72,23 @@ angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMaps
         });
       };
 
-      $scope.markers = [];
-
       uiGmapGoogleMapApi.then(function(maps) {
-        $geolocation.getCurrentPosition({
-          timeout: 3000
-        }).then(function(position) {
+        // Don't pass timeout parameter here; that is handled by setTimeout below
+        $geolocation.getCurrentPosition({}).then(function(position) {
             initializeMap(position);
           },
           function(error) {
-            console.log();
-            // Default to downtown Toronto
-            initializeMap({coords: {latitude: 43.6722780, longitude: -79.3745125}});
+            console.log(error);
+            initializeMap();
           });
       });
+
+      // Deal with case where user does not make a selection
+      $timeout(function() {
+        if (!$scope.map) {
+          console.log("No confirmation from user, using fallback");
+          initializeMap();
+        }
+      }, 3000);
 
     }]);

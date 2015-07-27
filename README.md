@@ -20,6 +20,16 @@ to your environment.
     export YELP_TOKEN=<VALUE_FROM_YELP>
     export YELP_TOKEN_SECRET=<VALUE_FROM_YELP>
 
+## Continuous Integration
+
+### Circle CI
+
+[Circle CI][circleci.com] is a continuous integration service, which can monitor GitHub for new commits
+to your repository and execute scripts such as building the app or running tests. Circle is 
+configured using the `circle.yml` file. You need to sign up for Circle and enable this project, then
+set up Heroku deployment from Circle. To make this work, you need to create a herokuapp and put the
+name of that app in `circle.yml`.
+
 ---------------------------------------
 ## Original README for the seed project
 
@@ -249,18 +259,6 @@ out what is the best way to host the static files to comply with the same origin
 applicable. Usually this is done by hosting the files by the backend server or through
 reverse-proxying the backend server(s) and webserver(s).
 
-
-## Continuous Integration
-
-### Travis CI
-
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The angular-seed
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
-
-You will need to enable the integration between Travis and GitHub. See the Travis website for more
-instruction on how to do this.
 
 ### CloudBees
 

@@ -1,6 +1,6 @@
 # angular-google-maps-example
 
-Example of using angular-google-maps to display data from an API
+Example of using angular-google-maps to display data from an API.
 
 View the running app on [Heroku](https://angular-google-maps-example.herokuapp.com/)
 
@@ -24,7 +24,7 @@ to your environment.
 
 ### Circle CI
 
-[Circle CI][circleci.com] is a continuous integration service, which can monitor GitHub for new commits
+[Circle CI](https://circleci.com/) is a continuous integration service, which can monitor GitHub for new commits
 to your repository and execute scripts such as building the app or running tests. Circle is 
 configured using the `circle.yml` file. You need to sign up for Circle and enable this project, then
 set up Heroku deployment from Circle. To make this work, you need to create a herokuapp and put the

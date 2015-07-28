@@ -1,13 +1,13 @@
 'use strict';
 
-describe('googleMapsExample.map module', function() {
+describe('angularGoogleMapsExample.map module', function() {
   var scope;
 
   // Mock unavailable modules
   angular.module('ngGeolocation', []);
-  angular.module('googleMapsExample.yelp', []);
+  angular.module('angularGoogleMapsExample.yelp', []);
 
-  beforeEach(module('googleMapsExample.map'));
+  beforeEach(module('angularGoogleMapsExample.map'));
 
   describe('map controller', function() {
     it('should ....', inject(function($rootScope, $controller, $q) {

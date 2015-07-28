@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('googleMapsExample.yelp', ['googleMapsExample.constants'])
+angular.module('angularGoogleMapsExample.yelp', ['angularGoogleMapsExample.constants'])
 
   .factory('Yelp', function($http, $q, apiUrl) {
     return {

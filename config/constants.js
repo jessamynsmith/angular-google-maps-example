@@ -1,2 +1,2 @@
-angular.module('googleMapsExample.constants', [])
+angular.module('angularGoogleMapsExample.constants', [])
   .constant('apiUrl', '@@apiUrl');

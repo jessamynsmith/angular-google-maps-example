@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMapsExample.yelp'])
+angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'angularGoogleMapsExample.yelp'])
 
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/map', {
@@ -69,6 +69,7 @@ angular.module('googleMapsExample.map', ['ngRoute', 'ngGeolocation', 'googleMaps
           }
         }, function(error) {
           console.log("Unable to access yelp");
+          console.log(error);
         });
       };
 

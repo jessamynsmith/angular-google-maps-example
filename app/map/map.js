@@ -90,6 +90,6 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
           console.log("No confirmation from user, using fallback");
           initializeMap();
         }
-      }, 3000);
+      }, 5000);
 
     }]);

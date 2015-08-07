@@ -39,6 +39,15 @@ app.get('/api/v1/yelp/search', function(request, response) {
   });
 });
 
+app.use('/*', function(req, res){
+  var fileName = req.params[0];
+  fileName = fileName.substring(fileName.indexOf('/') + 1);
+  if (!fileName || fileName.indexOf('.') == -1) {
+    fileName = 'index.html';
+  }
+  res.sendFile(__dirname + '/app/' + fileName);
+});
+
 app.set('port', process.env.PORT || 5000);
 
 app.listen(app.get('port'), function() {

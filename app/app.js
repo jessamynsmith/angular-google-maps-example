@@ -15,6 +15,8 @@ angular.module('angularGoogleMapsExample', [
     });
   })
 
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.otherwise({redirectTo: '/map'});
+
+    $locationProvider.html5Mode(true);
   }]);

@@ -2,7 +2,7 @@
 
 angular.module('angularGoogleMapsExample.yelp', ['angularGoogleMapsExample.constants'])
 
-  .factory('Yelp', function($http, $q, apiUrl) {
+  .factory('Yelp', function($http, apiUrl) {
     return {
       search: function(position) {
         return $http({

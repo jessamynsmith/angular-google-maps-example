@@ -260,17 +260,6 @@ applicable. Usually this is done by hosting the files by the backend server or t
 reverse-proxying the backend server(s) and webserver(s).
 
 
-### CloudBees
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
-<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
-
-
 ## Contact
 
 For more information on AngularJS please check out http://angularjs.org/

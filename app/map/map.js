@@ -55,7 +55,7 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
         };
 
         Yelp.search(position).then(function(data) {
-          for (var i = 0; i < 10; i++) {
+          for (var i = 0; i < data.data.businesses.length; i++) {
             var business = data.data.businesses[i];
             $scope.markers.push({
               id: i,

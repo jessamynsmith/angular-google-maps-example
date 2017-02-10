@@ -1,17 +1,17 @@
 {
-  "name": "angular-seed",
-  "description": "A starter project for AngularJS",
+  "name": "angular-google-maps-example",
+  "description": "Example of using angular-google-maps to display data from an API",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "repository": "https://github.com/jessamynsmith/angular-google-maps-example",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.0",
-    "angular-google-maps": "~2.1.5",
-    "angular-route": "~1.4.0",
-    "angular-loader": "~1.4.0",
-    "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~5.2.0",
-    "ngGeolocation": "~0.0.7"
+    "angular": "^1.6.2",
+    "angular-google-maps": "^2.4.1",
+    "angular-route": "^1.6.2",
+    "angular-loader": "^1.6.2",
+    "angular-mocks": "^1.6.2",
+    "html5-boilerplate": "^5.3.0",
+    "ngGeolocation": "^0.0.8"
   }
 }

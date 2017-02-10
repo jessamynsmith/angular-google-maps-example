@@ -16,6 +16,18 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
       $scope.infoVisible = false;
       $scope.infoBusiness = {};
 
+      // Default to downtown Toronto
+      var defaultPosition = {
+        latitude: 43.6722780,
+        longitude: -79.3745125
+      };
+      var zoomLevel = 16;
+
+      $scope.map = {
+        center: defaultPosition,
+        zoom: zoomLevel
+      };
+
       // Initialize and show infoWindow for business
       $scope.showInfo = function(marker, eventName, markerModel) {
         $scope.infoBusiness = markerModel;
@@ -29,12 +41,9 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
 
       var initializeMap = function(position) {
         if (!position) {
-          // Default to downtown Toronto
+
           position = {
-            coords: {
-              latitude: 43.6722780,
-              longitude: -79.3745125
-            }
+            coords: defaultPosition
           };
         }
 
@@ -43,7 +52,7 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
             latitude: position.coords.latitude,
             longitude: position.coords.longitude
           },
-          zoom: 16
+          zoom: zoomLevel
         };
 
         // Make info window for marker show up above marker

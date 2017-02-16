@@ -9,9 +9,9 @@ angular.module('angularGoogleMapsExample', [
 
   .config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-      //key: 'your api key',
+      key: 'AIzaSyDcrj0tFoCnUn9BCWalr4Xbz4uH1fGjt7Q',
       //libraries: 'weather,geometry,visualization',
-      v: '3.17'
+      v: '3.26'
     });
   })
 

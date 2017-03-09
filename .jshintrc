@@ -1,6 +1,7 @@
 {
   "devel": true,
   "globalstrict": true,
+  "node": true,
   "globals": {
     "angular": false,
     "describe": false,

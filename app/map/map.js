@@ -91,15 +91,16 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
       const searchYelp = function(position) {
         $scope.markers = [];
         Yelp.search(position, $scope.params.term).then(function(data) {
-          for (var i = 0; i < data.data.businesses.length; i++) {
-            var business = data.data.businesses[i];
+          var businesses = data.data.jsonBody.businesses;
+          for (var i = 0; i < businesses.length; i++) {
+            var business = businesses[i];
             $scope.markers.push({
               id: i,
               name: business.name,
               url: business.url,
               location: {
-                latitude: business.location.coordinate.latitude,
-                longitude: business.location.coordinate.longitude
+                latitude: business.coordinates.latitude,
+                longitude: business.coordinates.longitude
               }
             });
           }

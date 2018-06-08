@@ -25,12 +25,10 @@ app.get('/api/v1/yelp/search', function(request, response) {
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
 
-  yelp.search(query, function(error, data) {
-    if (error) {
-      response.status(error.statusCode).send(error);
-    } else {
-      response.send(data);
-    }
+  yelp.search(query).then(data => {
+    response.send(data);
+  }).catch(error => {
+    response.status(error.statusCode).send(error);
   });
 });
 

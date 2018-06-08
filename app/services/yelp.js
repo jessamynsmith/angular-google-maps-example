@@ -13,7 +13,8 @@ angular.module('angularGoogleMapsExample.yelp', ['angularGoogleMapsExample.const
             limit: 10,
             radius_filter: 500,
             sort: 1,
-            ll: [position.coords.latitude, position.coords.longitude].join()
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
           }
         });
       }

@@ -4,11 +4,12 @@ angular.module('angularGoogleMapsExample.yelp', ['angularGoogleMapsExample.const
 
   .factory('Yelp', function($http, apiUrl) {
     return {
-      search: function(position) {
+      search: function(position, term) {
         return $http({
           method: "get",
           url: apiUrl + 'api/v1/yelp/search',
           params: {
+            term: term,
             limit: 10,
             radius_filter: 500,
             sort: 1,

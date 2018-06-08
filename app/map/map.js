@@ -15,6 +15,9 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
       $scope.markers = [];
       $scope.infoVisible = false;
       $scope.infoBusiness = {};
+      $scope.params = {
+        term: ''
+      };
 
       // Default to downtown Toronto
       var defaultPosition = {
@@ -63,23 +66,7 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
           }
         };
 
-        Yelp.search(position).then(function(data) {
-          for (var i = 0; i < data.data.businesses.length; i++) {
-            var business = data.data.businesses[i];
-            $scope.markers.push({
-              id: i,
-              name: business.name,
-              url: business.url,
-              location: {
-                latitude: business.location.coordinate.latitude,
-                longitude: business.location.coordinate.longitude
-              }
-            });
-          }
-        }, function(error) {
-          console.log("Unable to access yelp");
-          console.log(error);
-        });
+        searchYelp(position);
       };
 
       uiGmapGoogleMapApi.then(function(maps) {
@@ -100,5 +87,33 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
           initializeMap();
         }
       }, 5000);
+
+      const searchYelp = function(position) {
+        $scope.markers = [];
+        Yelp.search(position, $scope.params.term).then(function(data) {
+          for (var i = 0; i < data.data.businesses.length; i++) {
+            var business = data.data.businesses[i];
+            $scope.markers.push({
+              id: i,
+              name: business.name,
+              url: business.url,
+              location: {
+                latitude: business.location.coordinate.latitude,
+                longitude: business.location.coordinate.longitude
+              }
+            });
+          }
+        }, function(error) {
+          console.log("Unable to access yelp");
+          console.log(error);
+        });
+      };
+
+      $scope.search = function() {
+        const position = {
+          coords: $scope.map.center
+        };
+        searchYelp(position);
+      };
 
     }]);

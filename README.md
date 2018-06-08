@@ -17,10 +17,7 @@ In order to enable the Yelp searching, you will need to sign up for a
 [API V2 credentials](https://www.yelp.com/developers/manage_api_keys)
 to your environment.
 
-    export YELP_CONSUMER_KEY=<VALUE_FROM_YELP>
-    export YELP_CONSUMER_SECRET=<VALUE_FROM_YELP>
-    export YELP_TOKEN=<VALUE_FROM_YELP>
-    export YELP_TOKEN_SECRET=<VALUE_FROM_YELP>
+    export YELP_API_KEY=<VALUE_FROM_YELP>
 
 ## Continuous Integration
 

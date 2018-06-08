@@ -13,6 +13,7 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
     function($scope, $timeout, $geolocation, uiGmapGoogleMapApi, Yelp) {
 
       $scope.markers = [];
+      // TODO infoWindows are populating or repositioning correctly
       $scope.infoVisible = false;
       $scope.infoBusiness = {};
       $scope.params = {
@@ -88,7 +89,7 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
         }
       }, 5000);
 
-      const searchYelp = function(position) {
+      var searchYelp = function(position) {
         $scope.markers = [];
         Yelp.search(position, $scope.params.term).then(function(data) {
           var businesses = data.data.jsonBody.businesses;
@@ -111,7 +112,7 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
       };
 
       $scope.search = function() {
-        const position = {
+        var position = {
           coords: $scope.map.center
         };
         searchYelp(position);

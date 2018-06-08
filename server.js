@@ -18,16 +18,16 @@ app.all('*', function(req, res, next) {
 
 // API Routes
 app.get('/api/v1/yelp/search', function(request, response) {
-  const url = require('url');
-  const yelpFusion = require('yelp-fusion');
-  const yelp = yelpFusion.client(process.env.YELP_API_KEY);
+  var url = require('url');
+  var yelpFusion = require('yelp-fusion');
+  var yelp = yelpFusion.client(process.env.YELP_API_KEY);
 
   var url_parts = url.parse(request.url, true);
   var query = url_parts.query;
 
-  yelp.search(query).then(data => {
+  yelp.search(query).then(function(data) {
     response.send(data);
-  }).catch(error => {
+  }).catch(function(error) {
     response.status(error.statusCode).send(error);
   });
 });

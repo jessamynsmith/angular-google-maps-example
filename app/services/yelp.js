@@ -5,6 +5,7 @@ angular.module('angularGoogleMapsExample.yelp', ['angularGoogleMapsExample.const
   .factory('Yelp', function($http, apiUrl) {
     return {
       search: function(position, term) {
+        // TODO is the term being used in the yelp search?
         return $http({
           method: "get",
           url: apiUrl + 'api/v1/yelp/search',

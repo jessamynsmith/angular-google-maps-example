@@ -13,9 +13,6 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
     function($scope, $timeout, $geolocation, uiGmapGoogleMapApi, Yelp) {
 
       $scope.markers = [];
-      // TODO infoWindows are populating or repositioning correctly
-      $scope.infoVisible = false;
-      $scope.infoBusiness = {};
       $scope.params = {
         term: ''
       };
@@ -30,17 +27,6 @@ angular.module('angularGoogleMapsExample.map', ['ngRoute', 'ngGeolocation', 'ang
       $scope.map = {
         center: defaultPosition,
         zoom: zoomLevel
-      };
-
-      // Initialize and show infoWindow for business
-      $scope.showInfo = function(marker, eventName, markerModel) {
-        $scope.infoBusiness = markerModel;
-        $scope.infoVisible = true;
-      };
-
-      // Hide infoWindow when 'x' is clicked
-      $scope.hideInfo = function() {
-        $scope.infoVisible = false;
       };
 
       var initializeMap = function(position) {

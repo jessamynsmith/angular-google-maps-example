@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:3.6.5-jessie-node
+      - image: circleci/node:8.11
     steps:
       - checkout
       - restore_cache:
@@ -24,7 +24,7 @@ jobs:
             node_modules/karma/bin/karma start --single-run
   deploy:
     docker:
-      - image: circleci/node:3.6.5-jessie-node
+      - image: circleci/node:8.11
     steps:
       - checkout
       - run:

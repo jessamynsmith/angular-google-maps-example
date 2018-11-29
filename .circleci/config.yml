@@ -1,0 +1,34 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:4.8.2-jessie
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps-npm-{{ .Branch }}-{{ checksum "package.json" }}
+      - restore_cache:
+          key: deps-bower-{{ .Branch }}-{{ checksum "bower.json" }}
+      - save_cache:
+          key: deps-npm-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - "node_modules"
+      - save_cache:
+          key: deps-bower-{{ .Branch }}-{{ checksum "bower.json" }}
+          paths:
+            - "app/bower_components"
+      - run:
+          command: |
+            npm install
+            node_modules/.bin/jshint --exclude=app/bower_components app server.js
+            node_modules/karma/bin/karma start --single-run
+  deploy:
+    docker:
+      - image: circleci/node:4.8.2-jessie
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | bash
+            bash git push https://heroku:$HEROKU_API_KEY@git.heroku.com/angular-google-maps-example.git master

@@ -36,7 +36,7 @@ jobs:
             node_modules/karma/bin/karma start --single-run
   deploy:
     docker:
-      - image: circleci/node:8.11
+      - image: circleci/python:3.6.5-jessie-node
     steps:
       - checkout
       - run:

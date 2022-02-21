@@ -1,8 +1,8 @@
 # angular-google-maps-example
 
-Example of using angular-google-maps to display data from an API.
+NOTE: this project is no longer maintained.
 
-View the running app on [Heroku](https://angular-google-maps-example.herokuapp.com/)
+Example of using angular-google-maps to display data from an API.
 
 Like my work? Tip me! https://www.paypal.me/jessamynsmith
 

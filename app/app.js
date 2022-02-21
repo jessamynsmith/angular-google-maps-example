@@ -9,7 +9,7 @@ angular.module('angularGoogleMapsExample', [
 
   .config(function(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
-      key: 'AIzaSyDcrj0tFoCnUn9BCWalr4Xbz4uH1fGjt7Q',
+      key: 'AIzaSyCsMa9OnG_6l1y-vGtZL_82FezdOnfcpJI',
       //libraries: 'weather,geometry,visualization',
       v: '3.26'
     });

@@ -1,6 +1,6 @@
 # angular-google-maps-example
 
-NOTE: this project is no longer maintained.
+## NOTE: this project is no longer maintained.
 
 Example of using angular-google-maps to display data from an API.
 
